@@ -1,0 +1,19 @@
+<h2>Image List</h2>
+
+
+<div>
+	<label for="description">Titulo:</label>
+	<input type="text" [(ngModel)]="title">
+</div>
+<div>
+	<label for="description">Arquivo:</label>
+	<input type="file" (change)="handleFile($event)">
+</div>
+<button (click)="newFile()">Upload</button>
+
+<ul class="thumbs">
+	<li *ngFor="let image of images" >	
+		<span>{{image.title}}</span>
+		<img src="https://raczimages.blob.core.windows.net/thumbnails/{{image.guid}}.{{image.extension}}">  
+	</li>
+</ul>
